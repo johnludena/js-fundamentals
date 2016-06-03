@@ -147,27 +147,14 @@ console.assert(findLongestWord("dont mess with Texas") === "Texas")
 write a function that returns the Greatest Common Denominator of two numbers
 - if no GCD exists, return 1 */
 
-// Tried to get this but couldn't wrap my head around the whole GCD math operation and how to make that work in code. Got this answer from Stack Overflow, but for the life of me I don't get how this works (calling the function inside the SAME function?)
 
-
-var GCD = function(number1, number2) {
-    
-    var smallestNumber = 0;
-    
-    if (number1 > number2 ) {
-        smallestNumber = number2;
-    }
-    else {
-        smallestNumber = number1
+var GCD = function(input1, input2) {
+    if ( ! input2) {
+        return input1;
     }
 
-    for (var i = smallestNumber; i >= 2; i--) {
-        if ((number1 % i === 0) && (number2 % i === 0)) {
-            return i
-        }
-    }
-    return 1
-}
+    return GCD(input2, input1 % input2);
+};
 
 
 console.assert(GCD(5,1) === 1);
