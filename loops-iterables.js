@@ -147,8 +147,7 @@ console.assert(findLongestWord("dont mess with Texas") === "Texas")
 write a function that returns the Greatest Common Denominator of two numbers
 - if no GCD exists, return 1 */
 
-// Tried to get this but couldn't wrap my head around the whole GCD math operation and how to make that work in code. Got this answer from Stack Overflow, but for the life of me I don't get how this works (calling the function inside the SAME function?)
-
+// REVISED FUNCTION WITHOUT RECURSIVE METHOD
 
 var GCD = function(number1, number2) {
     
