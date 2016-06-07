@@ -74,7 +74,18 @@ var generateDog = function(nameProp) {
         name: nameProp,
         legs: 4,
         weight: 60,
-        color: "white"
+        color: "white",
+        speak: function(originalString) {
+            var stringArray = originalString.split(" ")
+            var outputArray = []
+            for (var i = 0; i < stringArray.length; i++) {
+                var word = stringArray[i]
+                var replace = word.replace(stringArray[i].substring(0,1),"r")
+                outputArray.push(replace)
+            }
+            var joinedString = outputArray.join(" ")
+            return joinedString
+        }
     }
     return newDog
 }
@@ -106,6 +117,17 @@ console.assert(dog.speak('so hungry') === 'ro rungry')
 
 // e.g:
 // pluck(stooges, 'name') should yield the array, ['moe','larry','curly']
+
+var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
+
+var pluck = function(objArray, propName) {
+    var stoogesArray = []
+    for (var i = 0; i < objArray.length; i++) {
+        var stoogeObject = objArray[i]
+        stoogesArray.push(stoogeObject[propName])
+    }
+    return stoogesArray
+}
 
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
 
